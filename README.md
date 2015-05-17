@@ -41,7 +41,7 @@ npm test
 ```
 
 Tests are run with [testmate](https://github.com/gr2m/testmate).
-In order to run them in a browser or trough saucelabs,
+In order to run them in a browser or through saucelabs,
 set `TEST_CLIENT` accordingly, for example
 
 ```
