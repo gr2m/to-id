@@ -25,13 +25,13 @@ and add it to your site using `<script src="to-id.js"></script>`
 Or install using [bower](http://bower.io/) for usage in browser:
 
 ```
-bower install --save initials
+bower install --save to-id
 ```
 
 Install using [npm](https://npmjs.org/) for node.js or browserify:
 
 ```
-npm install --save initials
+npm install --save to-id
 ```
 
 ## Test
