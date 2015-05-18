@@ -11,7 +11,9 @@ describe('toId(name)', function () {
   it('" L. (YC S15) - Is Hiring " ☛ "l-yc-s15-is-hiring"', function () {
     expect(toId(' L. (YC S15) - Is Hiring ')).to.equal('l-yc-s15-is-hiring')
   })
-
+  it('"-something funky-" ☛ "something-funky"', function () {
+    expect(toId('-something funky-')).to.equal('something-funky')
+  })
   it('"안_형_준" ☛ "안-형-준"', function () {
     expect(toId('안_형_준')).to.equal('안-형-준')
   })
