@@ -2,7 +2,7 @@
   if (typeof exports === 'object') {
     module.exports = factory()
   } else {
-    root.initials = factory()
+    root.toId = factory()
   }
 })(this, function () {
 
