@@ -17,4 +17,7 @@ describe('toId(name)', function () {
   it('"안_형_준" ☛ "안-형-준"', function () {
     expect(toId('안_형_준')).to.equal('안-형-준')
   })
+  it('"Bu’aale" ☛ "bu-aale" (#4)', function () {
+    expect(toId('Bu’aale')).to.equal('bu-aale')
+  })
 })
