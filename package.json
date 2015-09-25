@@ -6,8 +6,6 @@
     "test": "standard && testmate test/*.js",
     "test:node": "testmate --client node test/*.js",
     "test:browser": "testmate --client selenium:firefox test/*.js",
-    "prepublish": "semantic-release pre",
-    "postpublish": "semantic-release post",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
