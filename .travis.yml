@@ -1,38 +1,20 @@
-language: node_js
-node_js:
-- '0.10'
 sudo: false
+language: node_js
 cache:
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
-
+node_js:
+  - iojs
 before_install:
   - npm i -g npm@^2.0.0
 before_script:
   - npm prune
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - "sleep 5"
-  - curl -Lo travis_after_all.py https://raw.github.com/dmakhno/travis_after_all/master/travis_after_all.py
 after_success:
-  - python travis_after_all.py
-  - export $(cat .to_export_back)
-after_failure:
-  - python travis_after_all.py
-  - export $(cat .to_export_back)
-before_deploy:
-  # See https://github.com/boennemann/semantic-release/issues/18
-  - npm config set spin false --global
-  - rm -f travis_after_all.py .to_export_back
-after_script:
-  - echo leader=$BUILD_LEADER status=$BUILD_AGGREGATE_STATUS
-
+  - npm run semantic-release
 env:
   global:
-    # github
-    - secure: gDONfeXRxDn3GTLNfhc10YwGpIuvcPyOWwtNBDAkoEFCSlTq5191VtMsJXB9da5B1j/oNn2XypSEPq+2MkJJBQsDzH2UmlikK/dkas6aq9ZJbY24t876kKJSaohtUQeCCi1b7tJ0dfVFh8F+he1RohQIdGz57Iwx55r/xzWtvFyQ6eXbLfUMmhMCr2nbMvXVFX1B5kCWPeXXOaUAy9OzU/IYUn/fixdgaJiI2qRYvQH62UW7sPE4tQPFQXtymi/qQOup7+XykjhR5uXpxW2dyeovJCyMX9/E84MYxwhKJAb0DTvbcW+VRe1FCp0TOzDLnupNNMuyuSrnI2469V/6OTW1CYaXEd5E8s/u4PxdGl2R6pA6j2JNpW9ZWISz45oBGzFiUAJrkIvxu/YjtYa51JaqgkyRk5iYV9O6cS1UPUSEId+Mq9WFljpq+C+8Fr0pgu3/QKGKBSSJteIT38wZOQgCKAUMo1nzvhe+xht40TFa/COjGAyluXGUyu2dVe8DUbJYvaMs9iE0l6yvl8kB/HJNz3HujTVuCxMW59+D2p7go8DS/jfkmnBnvl24FcxVg+qvrB8CWvYawvlMfCtr9jkdypMs72RFwdFOeM/ew2bVwLzbVVlQZdVSQywtsZvj+u/HNp2HRVOVp90U9bbOj9+XN7AJBDCZGOWpbEfWeO8=
     # saucelabs
     - secure: I2VbFJYNFTuKd+3c78p47YCsippZha0lWCkFgydET30siL8z57XnfGRpXUvKNhMg12T+qVrZTUhTCqYKCaTjQPNPMc9SnlDrgZdgaVDg7GMStne1ilZ4V/MQHpj8s8+5jSR8dhBTT9uKJ87SWnEjU9aiJ8bCe4YkP52lVyqMv00lP3Nfo7khSuSlPlLD/oWXKq1q3RHNTyQ04uR8ysXLuOKv5/BCJfrsfebta5lKARtDoMOY9xQf+sYeCBr5D7H9uXmxTawA3b/ID7YcTBQuzUGk6HWqbsMw36UrYIE4yHpmbfhe2BCghRgwRW0JgTjfrk2Yts4kXqPKCtoMTJt8FnRHR3uzNSAj7Z71hTt00DAJHb5VYvbPuiL7NKhLJqXrfJnMSg1bFIme9Fj4CK9oOUAlbPWlYwxai0FlVdlfHaAdX6nAVWbBbWrGgKC4BaqK2tNF20Dbli6Plo81mDRVnV9LqWpmKY8ZnZmjB2LwjgQPH3FZknBRkpok4bEDUQSWdLA/BFWvJ+m383TaGJpgtPaulpTDY/HB+DXzM99wXqUnfZnfaJGVB+NLBqHszzxeajS66fGInWGKdS+whQUmnW0hcDEh1C2+rbg0kYrc4m3uuq3PSTH3ItTE2qJbw2uz66WgYiD87hqMkCV7QoMXU13ZGrETuGVo5tFW6NCL0CI=
     - secure: QOe9LBlIih90tQA9AtWHB2krxhGmjW/sIfm+BkAavflEWNPZu/NxRscMDZnjLkoFW7peR9F+Pqfp3BdTrNwHKB5Fsm2tjO5qGChZFHm6gFNwdWRanjcbJGv+k48PzNml70WKvua4lPSFtxau7uSD+j2L4D/pZmHpN/SzmDBovOx/oTPTPZ94OTB7OogjDcPHR+mLbRYvFYa/9BEeEkh7aZ/VXofoIsKNm7GAKSY6C8jWPwtbw/81AqbLoswZfg+QKhx3JwRdZUI8ns4pEsjo3I+o5w1m/qxJepnpAA0Qu5bTfLx1roj8NnJnavvSVuwloEBC+BuBFAB05RTjnZWNIJc4XI1lxgregvVEGH4v2+MegamDMEdW45q0t9yY96u0haJ+S94ZSsRCV4KLLqiFq/coSZyjj6/DHVegGDSzaxOwVVKhrB+cymOBkzIPjJ4mD4QzYXSqVIz2IZnqi0U3Ba0VIwq6yhHDsjFbf08W6fu08EIg4tVbJsry8R7AI0Ich8KqiS/yDD2BBiWh6bOj5VH1i3JQoBn8CSnq6Nc9+q/49OPa+Zb/AFXUOZF+gkjmtR0e78Y1eBiYMkFskbCmwff6H3IeDE1qPMjmSKY22BHim84jika49w1RI6kAzrcKUkGW0Gj+fcrYZj7WIyeqFOcboa8ooH/STNZ4AlOmOfI=
@@ -40,16 +22,3 @@ env:
     - TEST_CLIENT=node
     - TEST_CLIENT=selenium:firefox
     - TEST_CLIENT="saucelabs:internet explorer:10:Windows 8"
-
-deploy:
-  provider: npm
-  email: gregor@martynus.net
-  # Very important. Don't forget this one.
-  skip_cleanup: true
-  api_key:
-    # npm-api-key
-    - secure: h43BQXF2dX88I+YRVQ7C9XDPXD75AqsiJAifZSQGtXJ3FTbabM4m+nh9mrMRuue21HW/sZy7Gv/qfyhDRG2qc2wCx/v6mPack+Tn/0h972f5JeLGRgbTFbIGfYHVy2CrvYF4m9IhH/p0kv6mCt2fQCF/fqRNLry8qQsCTNQJKEgQ1+xWYLDrVce/jQvlcmc3oYAKSNjfcbMAHIoH9lrr/F27BxXDbq0b8nmxWv7Q8YTv6wx/goXAZ8KIHBb0aEVX6j51ZXwroD24IZ/EJ2pcRDbI8M05gTZDLDUAuoUXx97Gdv2rPCL7oDJ82HVbJtFtDez54nu3Bj5lC4a3puH2oIOjElpOOzgq7N3MXE5/m/iIm1g8OCKYUkXClMxw5Qh5Kke9L7zj6FI2YehU6CFjrwq2NfCjDL1bMk3yVzAW2uRicasTjGe026c0OUhVa8RVpruq4hiX2PNA/OSWZ3fFiNWxt182nQvLHhUruPZb6Qse3EGDA3qHOiaNLiTl0r2GLvINlXIl1YtpvVhaqF72TyXGbH/aSWLL5b+YeuYdyDIvnKcev6/oEVcHIETgGJSqQlnm/J/9UQCFfB7nRojKQGRR3p3766yCiY4HlERyv8L+ZxxbjZzNrEehASqv3V/0j4Q5LRPOBWAchCQsI4w949J+sHtXsrviyR1JjxbSdVA=
-  on:
-    branch: master
-    repo: gr2m/to-id
-    condition: "$BUILD_LEADER$BUILD_AGGREGATE_STATUS = YESothers_succeeded"
