@@ -1,6 +1,5 @@
 {
   "name": "to-id",
-  "version": "0.0.0-semantically-released",
   "description": "Normalises strings for comparison or usage as IDs",
   "main": "to-id.js",
   "scripts": {
@@ -8,11 +7,12 @@
     "test:node": "testmate --client node test/*.js",
     "test:browser": "testmate --client selenium:firefox test/*.js",
     "prepublish": "semantic-release pre",
-    "postpublish": "semantic-release post"
+    "postpublish": "semantic-release post",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gr2m/to-id.git"
+    "url": "https://github.com/gr2m/to-id.git"
   },
   "author": "Gregor Martynus <gregor@martynus.net>",
   "license": "MIT",
