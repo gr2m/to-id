@@ -1,0 +1,17 @@
+{
+  "name": "to-id",
+  "description": "Normalises strings for comparison or usage as IDs",
+  "main": "to-id.js",
+  "authors": [
+    "Gregor Martynus <gregor@martynus.net>"
+  ],
+  "license": "MIT",
+  "homepage": "http://gr2m.github.io/to-id",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
