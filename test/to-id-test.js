@@ -20,4 +20,7 @@ describe('toId(name)', function () {
   it('"Bu’aale" ☛ "bu-aale" (#4)', function () {
     expect(toId('Bu’aale')).to.equal('bu-aale')
   })
+  it('$  ☛ dollar', function () {
+    expect(toId('$34')).to.equal('dollar34')
+  })
 })

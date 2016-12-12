@@ -12,6 +12,7 @@
 
   function toId (string) {
     string = string.trim().toLowerCase()
+    string = string.replace(/\$/g, 'dollar')
     string = string.replace(nonLetters, '-')
     string = string.replace(dashesAtBeginningOrEnd, '')
     return string
