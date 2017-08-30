@@ -19,8 +19,8 @@
   },
   "homepage": "http://gr2m.github.io/to-id",
   "devDependencies": {
-    "semantic-release": "4.3.5",
-    "standard": "^8.0.0",
+    "semantic-release": "7.0.2",
+    "standard": "^10.0.3",
     "testmate": "1.0.2"
   }
 }
