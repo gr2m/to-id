@@ -1,14 +1,11 @@
 # to-id
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/gr2m/to-id.svg)](https://greenkeeper.io/)
-
 > Normalises strings for comparison or usage as IDs
 
 [![Build Status](https://travis-ci.org/gr2m/to-id.svg?branch=master)](https://travis-ci.org/gr2m/to-id)
 [![Dependency Status](https://david-dm.org/gr2m/to-id.svg)](https://david-dm.org/gr2m/to-id)
 [![devDependency Status](https://david-dm.org/gr2m/to-id/dev-status.svg)](https://david-dm.org/gr2m/to-id#info=devDependencies)
-
-[![NPM](https://nodei.co/npm/to-id.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/to-id/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/gr2m/to-id.svg)](https://greenkeeper.io/)
 
 ## Usage
 
