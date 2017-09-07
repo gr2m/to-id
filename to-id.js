@@ -1,4 +1,5 @@
 ;(function (root, factory) {
+  /* istanbul ignore else */
   if (typeof exports === 'object') {
     module.exports = factory()
   } else {
@@ -7,7 +8,7 @@
 })(this, function () {
   // We don't simply do a negative "/[^\w]+/" regex,
   // as it would exclude non-ascii letters, like "ä", "안", etc
-  var nonLetters = /[ !"#\$%&'\(\)\*\+,\-\.\/:;<=>\?@\[\\\]\^_`\{\|\}~’]+/g
+  var nonLetters = /[ !"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~’]+/g
   var dashesAtBeginningOrEnd = /(^-+|-+$)/g
 
   function toId (string) {
