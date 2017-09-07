@@ -3,7 +3,7 @@
   "description": "Normalises strings for comparison or usage as IDs",
   "main": "to-id.js",
   "scripts": {
-    "coverage": "tap --coverage-report=text-lcov | coveralls",
+    "coverage": "tap --coverage-report=text-lcov | codecov",
     "pretest": "standard",
     "test": "tap --100 --coverage test/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -19,7 +19,7 @@
   },
   "homepage": "http://gr2m.github.io/to-id",
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "codecov": "^2.3.0",
     "semantic-release": "7.0.2",
     "standard": "^10.0.3",
     "tap": "^10.7.2"
