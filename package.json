@@ -3,9 +3,8 @@
   "description": "Normalises strings for comparison or usage as IDs",
   "main": "to-id.js",
   "scripts": {
-    "test": "standard && testmate test/*.js",
-    "test:node": "testmate --client node test/*.js",
-    "test:browser": "testmate --client selenium:firefox test/*.js",
+    "pretest": "standard",
+    "test": "tap --coverage test/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -21,6 +20,6 @@
   "devDependencies": {
     "semantic-release": "7.0.2",
     "standard": "^10.0.3",
-    "testmate": "1.0.2"
+    "tap": "^10.7.2"
   }
 }
