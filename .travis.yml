@@ -6,9 +6,7 @@ cache:
 notifications:
   email: false
 node_js:
-  - 8
-  - 6
-  - 4
+  - 4 # Node maintenance, keep up-to-date with https://github.com/nodejs/LTS
 before_script:
   - npm prune
 after_success:
