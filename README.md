@@ -3,7 +3,7 @@
 > Normalises strings for comparison or usage as IDs
 
 [![Build Status](https://travis-ci.org/gr2m/to-id.svg?branch=master)](https://travis-ci.org/gr2m/to-id)
-[![Coverage Status](https://coveralls.io/repos/gr2m/to-id/badge.svg?branch=master)](https://coveralls.io/github/gr2m/to-id?branch=master)
+[![Coverage Status](https://codecov.io/gh/gr2m/to-id/branch/master/graph/badge.svg)
 [![Greenkeeper badge](https://badges.greenkeeper.io/gr2m/to-id.svg)](https://greenkeeper.io/)
 
 ## Usage
