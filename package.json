@@ -3,7 +3,7 @@
   "description": "Normalises strings for comparison or usage as IDs",
   "main": "to-id.js",
   "scripts": {
-    "coverage": "tap --coverage-report=text-lcov | codecov",
+    "coverage": "tap --coverage-report=text-lcov > coverage.lcov && codecov",
     "pretest": "standard",
     "test": "tap --100 --coverage test/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
