@@ -1,23 +1,27 @@
-/* global describe, it, expect */
+var test = require('tap').test
 var toId = require('../to-id')
 
-describe('toId(name)', function () {
-  it('"Inside a $34 smartphone" ☛ "inside-a-34-smartphone"', function () {
-    expect(toId('Inside a $34 smartphone')).to.equal('inside-a-34-smartphone')
-  })
-  it('"Kore: a fast web server" ☛ "kore-a-fast-web-server"', function () {
-    expect(toId('Kore: a fast web server')).to.equal('kore-a-fast-web-server')
-  })
-  it('" L. (YC S15) - Is Hiring " ☛ "l-yc-s15-is-hiring"', function () {
-    expect(toId(' L. (YC S15) - Is Hiring ')).to.equal('l-yc-s15-is-hiring')
-  })
-  it('"-something funky-" ☛ "something-funky"', function () {
-    expect(toId('-something funky-')).to.equal('something-funky')
-  })
-  it('"안_형_준" ☛ "안-형-준"', function () {
-    expect(toId('안_형_준')).to.equal('안-형-준')
-  })
-  it('"Bu’aale" ☛ "bu-aale" (#4)', function () {
-    expect(toId('Bu’aale')).to.equal('bu-aale')
-  })
+test('"Inside a $34 smartphone" ☛ "inside-a-34-smartphone"', function (t) {
+  t.is(toId('Inside a $34 smartphone'), 'inside-a-34-smartphone')
+  t.end()
+})
+test('"Kore: a fast web server" ☛ "kore-a-fast-web-server"', function (t) {
+  t.is(toId('Kore: a fast web server'), 'kore-a-fast-web-server')
+  t.end()
+})
+test('" L. (YC S15) - Is Hiring " ☛ "l-yc-s15-is-hiring"', function (t) {
+  t.is(toId(' L. (YC S15) - Is Hiring '), 'l-yc-s15-is-hiring')
+  t.end()
+})
+test('"-something funky-" ☛ "something-funky"', function (t) {
+  t.is(toId('-something funky-'), 'something-funky')
+  t.end()
+})
+test('"안_형_준" ☛ "안-형-준"', function (t) {
+  t.is(toId('안_형_준'), '안-형-준')
+  t.end()
+})
+test('"Bu’aale" ☛ "bu-aale" (#4)', function (t) {
+  t.is(toId('Bu’aale'), 'bu-aale')
+  t.end()
 })
