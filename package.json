@@ -23,5 +23,9 @@
     "semantic-release": "^8.0.0",
     "standard": "^10.0.3",
     "tap": "^10.7.2"
-  }
+  },
+  "keywords": [],
+  "contributors": [
+    "Gregor Martynus <gregor@martynus.net>"
+  ]
 }
