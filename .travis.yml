@@ -1,14 +1,24 @@
-sudo: false
 language: node_js
 cache:
   directories:
     - $HOME/.npm
-notifications:
-  email: false
 node_js:
-  - 4 # Node maintenance, keep up-to-date with https://github.com/nodejs/LTS
-before_script:
-  - npm prune
-after_success:
-  - npm run semantic-release
-  - npm run coverage
+  - 4
+  - 6
+  - 8
+  - 9
+
+# Trigger a push build on master and greenkeeper branches + PRs build on every branches
+# Avoid double build on PRs (See https://github.com/travis-ci/travis-ci/issues/1147)
+branches:
+  only:
+    - master
+    - /^greenkeeper.*$/
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      script: npm run semantic-release
+    - node_js: lts/*
+      script: npm run coverage
