@@ -3,10 +3,8 @@ cache:
   directories:
     - $HOME/.npm
 node_js:
-  - 4
   - 6
   - 8
-  - 9
   - 10
 
 # Trigger a push build on master and greenkeeper branches + PRs build on every branches
