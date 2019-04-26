@@ -1,18 +1,18 @@
 {
   "name": "to-id",
+  "version": "0.0.0-development",
   "description": "Normalises strings for comparison or usage as IDs",
   "main": "to-id.js",
   "scripts": {
     "coverage": "tap --coverage-report=text-lcov > coverage.lcov && codecov",
     "pretest": "standard",
-    "test": "tap --100 --coverage test/*.js",
-    "semantic-release": "semantic-release"
+    "test": "tap --100 --coverage test/*.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gr2m/to-id.git"
   },
-  "author": "Gregor Martynus <gregor@martynus.net>",
+  "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gr2m/to-id/issues"
@@ -20,12 +20,9 @@
   "homepage": "http://gr2m.github.io/to-id",
   "devDependencies": {
     "codecov": "^3.0.0",
-    "semantic-release": "^15.4.3",
+    "semantic-release": "^15.13.3",
     "standard": "^12.0.0",
     "tap": "^12.0.0"
   },
-  "keywords": [],
-  "contributors": [
-    "Gregor Martynus <gregor@martynus.net>"
-  ]
+  "keywords": []
 }
