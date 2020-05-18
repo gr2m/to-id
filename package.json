@@ -19,7 +19,7 @@
   },
   "homepage": "http://gr2m.github.io/to-id",
   "devDependencies": {
-    "codecov": "^3.0.0",
+    "codecov": "^3.7.0",
     "semantic-release": "^17.0.0",
     "standard": "^14.0.0",
     "tap": "^14.0.0"
