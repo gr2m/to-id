@@ -8,15 +8,9 @@
     "pretest": "standard",
     "test": "tap --100 --coverage test/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gr2m/to-id.git"
-  },
+  "repository": "github:gr2m/to-id",
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gr2m/to-id/issues"
-  },
   "homepage": "http://gr2m.github.io/to-id",
   "devDependencies": {
     "codecov": "^3.0.0",
