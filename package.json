@@ -15,7 +15,7 @@
   "devDependencies": {
     "codecov": "^3.0.0",
     "semantic-release": "^19.0.3",
-    "standard": "^14.0.0",
+    "standard": "^17.1.2",
     "tap": "^18.5.1"
   },
   "keywords": []
