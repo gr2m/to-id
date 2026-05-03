@@ -4,7 +4,6 @@
   "description": "Normalises strings for comparison or usage as IDs",
   "main": "to-id.js",
   "scripts": {
-    "coverage": "tap --coverage-report=text-lcov > coverage.lcov && codecov",
     "pretest": "standard",
     "test": "tap --100 --coverage test/*.js"
   },
@@ -13,7 +12,6 @@
   "license": "MIT",
   "homepage": "http://gr2m.github.io/to-id",
   "devDependencies": {
-    "codecov": "^3.0.0",
     "semantic-release": "^25.0.3",
     "standard": "^17.1.2",
     "tap": "^21.6.2"
